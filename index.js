@@ -67,9 +67,7 @@ async function run() {
     app.put("/user/package/update/:id", async (req, res) => {
       const id = req.params.id;
       const updatedPackages = req.body;
-
       const query = { _id: ObjectId(id) };
-
       const options = { upsert: true };
       const updateDoc = {
         $set: {
